@@ -45,9 +45,27 @@ public class Main {
 
     public static int binary_search(int needle, int[] haystack)
     {
-        int index = -1;
+        int min = 0;
+        int max = haystack.length - 1;
 
-        return index;
+        while (min <= max)
+        {
+            int mid = (min + max) / 2;
+            if (haystack[mid] < needle)
+            {
+                min = mid + 1;
+            }
+            else if (haystack[mid] > needle)
+            {
+                max = mid - 1;
+            }
+            else
+            {
+                return mid;
+            }
+        }
+
+        return -1;
     }
 
     public static int[] insertion_sort(int[] input)
