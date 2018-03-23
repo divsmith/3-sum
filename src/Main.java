@@ -42,7 +42,7 @@ public class Main {
                 {
                     int number = a[index];
 
-                    if (a[i] <= a[j] && a[j] < a[index])
+                    if (a[j] < a[index])
                     {
                         count++;
 
@@ -56,46 +56,13 @@ public class Main {
                             count++;
                         }
                     }
-                    else if (a[i] <= a[j]  && a[j] == a[index])
+                    else if (a[j] == a[index])
                     {
-                        int k;
-
-                        for (k = j + 1; k <= a.length - 1 && a[k] == number; k++)
+                        for (int k = j + 1; k <= a.length - 1 && a[k] == number; k++)
                         {
                             count++;
                         }
                     }
-//                    if (j == index)
-//                    {
-//                        if (a[j] == a[j - 1])
-//                        {
-//                            continue;
-//                        }
-//
-//                        for (int k = index + 1; k <= a.length - 1 && a[k] == number; k++)
-//                        {
-//                            count++;
-//                        }
-//                    }
-//                    else if (a[i] < a[j] && a[j] < a[index])
-//                    {
-//                        count++;
-////                        System.out.println("a[i] = a[" + i + "] = " + a[i]);
-////                        System.out.println("a[j] = a[" + j + "] = " + a[j]);
-////                        System.out.println("a[index] = a[" + index + "] = " + a[index]);
-//
-//                        for (int k = index - 1;  k >= j && a[k] == number; k--)
-//                        {
-//                            count++;
-////                            System.out.println("K: " + k + " J: " + j + "Index: " + index);
-//                        }
-//
-//                        for (int k = index + 1; k <= a.length - 1 && a[k] == number; k++)
-//                        {
-//                            count++;
-////                            System.out.println("K: " + k + " J: " + j + "Index: " + index);
-//                        }
-//                    }
                 }
             }
         }
