@@ -29,8 +29,28 @@ class MainTest {
     @Test
     void binary_search()
     {
-        int[] haystack = {1, 2, 3, 4};
+        int[] haystack = {1, 2, 3, 4, 5};
         Assertions.assertEquals(1, Main.binary_search(2, haystack));
     }
 
+    @Test
+    void binary_search_first()
+    {
+        int[] haystack = {1, 2, 3, 4, 5};
+        Assertions.assertEquals(0, Main.binary_search(1, haystack));
+    }
+
+    @Test
+    void binary_search_last()
+    {
+        int[] haystack = {1, 2, 3, 4, 5};
+        Assertions.assertEquals(4, Main.binary_search(5, haystack));
+    }
+
+    @Test
+    void binary_search_not_found()
+    {
+        int[] haystack = {1, 2, 3, 4, 5};
+        Assertions.assertEquals(-1, Main.binary_search(17, haystack));
+    }
 }
