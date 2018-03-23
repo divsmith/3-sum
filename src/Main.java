@@ -43,6 +43,13 @@ public class Main {
         return count;
     }
 
+    public static int binary_search(int needle, int[] haystack)
+    {
+        int index = -1;
+
+        return index;
+    }
+
     public static int[] insertion_sort(int[] input)
     {
         int i = 1;
