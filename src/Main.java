@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static int count(int[] a)
+    public static int countCubic(int[] a)
     {
         int N = a.length;
         int count = 0;
@@ -27,9 +27,24 @@ public class Main {
 
     public static int[] insertion_sort(int[] input)
     {
-        int[] output = new int[input.length];
+        int i = 1;
 
-        return output;
+        while (i < input.length)
+        {
+            int j = i;
+            while (j > 0 && (input[j - 1] > input[j]))
+            {
+                int temp = input[j];
+                input[j] = input[j - 1];
+                input [j - 1] = temp;
+
+                j--;
+            }
+
+            i++;
+        }
+
+        return input;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -37,7 +52,7 @@ public class Main {
         int[] a = in.readAllInts();
         System.out.println("Total ints: " + a.length);
         Stopwatch stopwatch = new Stopwatch();
-        System.out.println(count(a));
+        System.out.println(countCubic(a));
         double time = stopwatch.elapsedTime();
         System.out.println("Time: " + time);
     }
