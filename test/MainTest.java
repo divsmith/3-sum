@@ -26,4 +26,11 @@ class MainTest {
         Assertions.assertTrue(Arrays.equals(sorted, Main.insertion_sort(unsorted)));
     }
 
+    @Test
+    void binary_search()
+    {
+        int[] haystack = {1, 2, 3, 4};
+        Assertions.assertEquals(1, Main.binary_search(2, haystack));
+    }
+
 }
