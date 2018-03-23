@@ -25,6 +25,13 @@ public class Main {
         return count;
     }
 
+    public static int[] insertion_sort(int[] input)
+    {
+        int[] output = new int[input.length];
+
+        return output;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         In in = new In(new File(args[0]));
         int[] a = in.readAllInts();
