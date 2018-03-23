@@ -36,7 +36,12 @@ public class Main {
         {
             for (int j = i + 1; j < N; j++)
             {
+                int index = binary_search(-(a[i] + a[j]), a);
 
+                if (index != -1 && a[i] <= a[j] && a[j] <= a[index])
+                {
+                    count++;
+                }
             }
         }
 
@@ -97,6 +102,11 @@ public class Main {
         Stopwatch stopwatch = new Stopwatch();
         System.out.println(countCubic(a));
         double time = stopwatch.elapsedTime();
-        System.out.println("Time: " + time);
+        System.out.println("Cubic Time: " + time);
+
+        stopwatch = new Stopwatch();
+        System.out.println(countQuadratic(a));
+        time = stopwatch.elapsedTime();
+        System.out.println("Quadratic Time: " + time);
     }
 }
