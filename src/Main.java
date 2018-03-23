@@ -41,6 +41,19 @@ public class Main {
                 if (index != -1 && a[i] <= a[j] && a[j] <= a[index])
                 {
                     count++;
+
+                    // Find duplicates
+                    int number = a[index];
+
+                    for (int k = index - 1; a[k] == number && k >= 0; k--)
+                    {
+                        count++;
+                    }
+
+                    for (int k = index + 1; k <= a.length - 1 && a[k] == number; k++)
+                    {
+                        count++;
+                    }
                 }
             }
         }
