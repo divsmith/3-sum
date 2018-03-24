@@ -46,6 +46,13 @@ public class Main {
                     {
                         count++;
 
+                        /*
+                         * The for loops are used to correctly account for duplicate numbers
+                         * that would otherwise be missed. Since the condition checks for
+                         * a[k] == number, they don't have to loop through the entire
+                         * sorted array (unless the rest of the array is that single
+                         * number). In most cases this keeps it from degrading to ~n^3.
+                         */
                         for (int k = index - 1;  k >= j && a[k] == number; k--)
                         {
                             count++;
@@ -95,6 +102,14 @@ public class Main {
         return -1;
     }
 
+    /**
+     * An insertion sort is used because it's simple and
+     * doesn't negatively impact the order of growth
+     * classification. countQuadratic() grows proportional
+     * to ~n^2 due to it's nested for loop, so any sorting
+     * algorithm that's equal to or faster than ~n^2 has no
+     * impact on the algorithm as a whole.
+     */
     public static int[] insertion_sort(int[] input)
     {
         int i = 1;
